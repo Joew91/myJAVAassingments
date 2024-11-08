@@ -26,7 +26,7 @@ public class Die {
 
     public void display() {
         if (value == 1) {
-            System.out.println("+-------+");
+            System.out.println("+-------+");x
             System.out.println("|       |");
             System.out.println("|   x   |");
             System.out.println("|       |");
