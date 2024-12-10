@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Random;
 
 public class PartC {
     public static void main(String[] args) {
