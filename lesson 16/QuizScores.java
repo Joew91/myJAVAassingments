@@ -42,26 +42,31 @@ public class QuizScores {
     }
 
     public static double[] dropLowestScore(double[] scores, int size) {
-        double min = scores [0];
+        double min = scores[0];
         int minIndex = 0;
+
         for (int i = 1; i < size; i++) {
             if (scores[i] < min) {
-                min = scores [i];
+                min = scores[i];
                 minIndex = i;
             }
         }
-        double[] newScores = new double [size - 1];
+        double[] newScores = new double[size - 1];
         int newIndex = 0;
 
-        for (int i = 0; i < size; i++) {
-            if (i != minIndex) {
-                newScores[newIndex] {
+        for (int i = 0; i < size - 1; i++) {
+            if (i < minIndex) {
+                newScores[newIndex] = scores[i];
 
-                }
-                    newScores[newIndex++] = scores[i];
+            } else {
+                newScores[newIndex++] = scores[i + 1];
+            }
+            newIndex++;
 
-                }
-             }
-             return newScores;
         }
+
+        return newScores;
+
+    }
+
 }
