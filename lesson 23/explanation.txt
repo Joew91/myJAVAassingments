@@ -1,0 +1,8 @@
+the output is 3
+
+for part b the fianly is always gonna be executed even if there 
+is a return statement in the try or catch block.
+
+int try the reutrn 1 is executed
+the finanly block has a return of 3 which overrides the return 1
+the output is then 3
