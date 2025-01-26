@@ -6,7 +6,7 @@ public class Partb {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Double> scores = new ArrayList<>();
 
-        System.out.println("eneter quiz score or q to quit");
+        System.out.println("enter quiz score or 'q' to quit: ");
         while (true) {
             System.out.print("enter a score");
             String input = scanner.nextLine();
