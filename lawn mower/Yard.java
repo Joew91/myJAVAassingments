@@ -44,7 +44,7 @@ public class Yard {
         public char getSymbol() {
             return '>';
             
-        public static void printYard(Mower mower) {
+        public static printYard(Mower mower) {
             clearScreen();
             yard[mower.row][mower.col] = mower.getSymbol();
             for (char[] row : yard) System.out.println(row);
@@ -52,7 +52,6 @@ public class Yard {
 
          }
          public static void clearScreen() {
-            System.out.print("\033[H\033[2J");
             System.out.flush();
          }
          public static void delay(long ms) {
