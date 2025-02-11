@@ -14,9 +14,40 @@ public class Yard {
             }
     }
 
+    public int getWidth() {
+        // returns width of the yard.
+        return yard[0].length;
+    }
+
+    public int getHeight() {
+        return yard.length;
+    }
+
+    public char getCell(int row, int col) {
+        return yard[row][col];
+    }
+
+    public void setCell(int row, int col, char value) {
+        yard[row][col] = value;
+
+    }
+
     public void printYard() {
         for (char[] row : yard) {
             System.out.println(row);
+        }
+    }
+
+    public void printYard(Mower mower) {
+        for (int row = 0; row < yard.length; row++) {
+            for (int col = 0; col < yard[0].length; col++) {
+                if (mower.getCol() == col & mower.getRow() == row) {
+                    System.out.print(mower.getSymbol());
+                } else {
+                    System.out.print(yard[row][col]);
+                }
+            }
+            System.out.println();
         }
     }
 
@@ -29,51 +60,5 @@ public class Yard {
         new Yard(height, width).printYard();
         scanner.close();
 
-        class Mower {
-        int row, col, direction = 1;
-        
-        public Mower(int startRow, int startCol) {
-            row = startRow;
-            col = startCol;
-
-        }
-        public void move() {
-            col++;
-            
-        }
-        public char getSymbol() {
-            return '>';
-            
-        public static printYard(Mower mower) {
-            clearScreen();
-            yard[mower.row][mower.col] = mower.getSymbol();
-            for (char[] row : yard) System.out.println(row);
-            yard[mower.row] [mower.col] = ' ';
-
-         }
-         public static void clearScreen() {
-            System.out.flush();
-         }
-         public static void delay(long ms) {
-            try { Thread.sleep(ms); } catch (InterruptedException e) {}
-
-         }
-         public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("enter lawn height: ");
-            int height = scanner.nextInt();
-            System.out.print("enter lawn width: ");
-            int width = scanner.nextInt();
-
-            Yard yard = new Yard(height, width);
-            Mower mower = new Mower(2, 1);
-
-            while (mower.col < width) {
-                yard.printYard(mower);
-                delay(500);
-                mower.move();
-            }
-          
-         }
-         
-        }
+    }
+}
