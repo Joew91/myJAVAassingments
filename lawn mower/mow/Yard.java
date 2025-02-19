@@ -1,3 +1,4 @@
+package mow;
 
 import java.util.Scanner;
 
