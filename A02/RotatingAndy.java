@@ -20,7 +20,7 @@ public class RotatingAndy extends JPanel implements ActionListener {
     private final int PANEL_SIZE = 720;
 
     public RotatingAndy() {
-        new ImageIcon("andy.png");
+        image = new ImageIcon("media/Andy.png").getImage();
         timer = new Timer(25, this);
         timer.start();
 
@@ -35,12 +35,14 @@ public class RotatingAndy extends JPanel implements ActionListener {
         int imgHeight = image.getHeight(this);
         int centerX = x + imgWidth / 2;
         int centerY = y + imgHeight / 2;
+
         AffineTransform transform = new AffineTransform();
         transform.translate(centerX, centerY);
         transform.rotate(Math.toRadians(angle));
         transform.translate(-imgWidth / 2, -imgHeight / 2);
 
-        g2d.setTransform(new AffineTransform());
+        g2d.setTransform(transform);
+
         g2d.drawImage(image, 0, 0, this);
     }
 
@@ -59,7 +61,7 @@ public class RotatingAndy extends JPanel implements ActionListener {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Rotating Andy");
+        JFrame frame = new JFrame("media/Andy.png");
         RotatingAndy panel = new RotatingAndy();
         frame.add(panel);
         frame.setSize(720, 720);
