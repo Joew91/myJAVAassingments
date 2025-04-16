@@ -69,9 +69,9 @@ class Cannon {
         this.x = x;
         this.y = y;
         this.angle = Math.toRadians(45);
-        image = new ImageIcon("media/sm_cannon.png").getImage();
-        wheelSound = loadSound("media/wheel.wav");
-        fireSound = loadSound("Umedia/cannon.wav");
+        image = new ImageIcon("/media/sm_cannon.png").getImage();
+        wheelSound = loadSound("/media/wheel.wav");
+        fireSound = loadSound("/media/cannon.wav");
     }
 
     private Clip loadSound(String path) {
